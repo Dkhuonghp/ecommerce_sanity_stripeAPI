@@ -17,9 +17,9 @@ a {
 }
 
 .main-container{
-max-width: 1400px; 
-margin: auto;
-width: 100%;
+  max-width: 1400px; 
+  margin: auto;
+  width: 100%;
 
 }
 .layout{
@@ -453,11 +453,13 @@ padding: 30px 65px;
   background-color:#f02d34;
 }
 .reviews{
-  color: #f02d34;
+  color: black;
   margin-top: 10px;
   display: flex;
-  gap: 5px;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .product-detail-desc h4{

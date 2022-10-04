@@ -166,6 +166,7 @@ const ProductDetails = ({ product, products }) => {
                         <p className="price">
                             ¥{price}
                         </p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates facilis quos qui sapiente, nobis consequuntur quae vel exercitationem et cumque totam in nulla aspernatur deserunt vitae neque quibusdam illum dolorem!</p>
                         <div className='quantity'>
                             <h3>Quantity</h3>
                             <p className="quantity-desc">
@@ -177,10 +178,9 @@ const ProductDetails = ({ product, products }) => {
 
                         <div className='buttons'>
                             <button type='button' className='add-to-cart' onClick={() => onAdd(product, qty)}>Add To Cart</button>
-                        </div>
-                        <div className='buttons'>
                             <button type='button' className='buy-now' onClick="">Buy Now</button>
                         </div>
+                        
                     </div>
                 </div>
             </div>
