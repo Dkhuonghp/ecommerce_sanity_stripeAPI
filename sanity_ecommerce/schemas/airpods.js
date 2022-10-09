@@ -1,6 +1,6 @@
 export default {
-    name: 'product',
-    title: 'Product',
+    name: 'airpods',
+    title: 'AirPods',
     type: 'document',
     fields: [
         {
@@ -9,7 +9,7 @@ export default {
             type: 'array',
             of: [{ type: 'image' }],
             options: {
-            hotspot: true,
+                hotspot: true,
             }
         },
         { 
@@ -31,6 +31,5 @@ export default {
             title: 'Price',
             type: 'number',
         },
-        
     ]
 }

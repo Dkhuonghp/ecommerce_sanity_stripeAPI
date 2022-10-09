@@ -1,6 +1,6 @@
 export default {
-    name: 'product',
-    title: 'Product',
+    name: 'iphone',
+    title: 'Iphone',
     type: 'document',
     fields: [
         {
@@ -31,6 +31,5 @@ export default {
             title: 'Price',
             type: 'number',
         },
-        
     ]
 }
