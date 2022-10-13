@@ -8,16 +8,25 @@ export default async function handler(req, res) {
       
       const params = {
         submit_type: 'pay',
-        submit_type: 'donate', // hiện giá sản phẩm ở cút thanh toán
+        // submit_type: 'donate', // hiện giá sản phẩm ở cút thanh toán
 
         mode: 'payment',
         allow_promotion_codes: true,
-        payment_method_types: ['card'], 
+        // payment_method_types: ['card'], 
+
+        payment_method_options: {
+          customer_balance: {
+            funding_type: 'bank_transfer',
+            bank_transfer: {
+              type: 'jp_bank_transfer',
+            },
+          },
+        },
 
         billing_address_collection: 'required', // địa chỉ giao hàng
         // lựa chọn phí giao hàng
         shipping_options: [
-          { shipping_rate: 'shr_1LpBwMLBhnAcZbQVnI30rr7w' },
+          { shipping_rate: 'shr_1LpBwMLBhnAcZbQVnI30rr7w' }, 
           { shipping_rate: 'shr_1LpCVDLBhnAcZbQV5kYRyiG5' },
         ],
         phone_number_collection: {
@@ -27,7 +36,7 @@ export default async function handler(req, res) {
         line_items: req.body.map((item) => {
           
           const img = item.image[0].asset._ref;
-          const newImage = img.replace('image-', 'https://cdn.sanity.io/images/0svza137/production/').replace('-jpg', '.jpg');
+          const newImage = img.replace('image-', 'https://cdn.sanity.io/images/0svza137/production/').replace('-jpg', '.jpg', '-webp', '.webp');
           
           return {
             price_data: { 
@@ -40,7 +49,8 @@ export default async function handler(req, res) {
             },
             adjustable_quantity: {
               enabled:true,
-              minimum: 0,
+              minimum: 1,
+              maximum: 3,
             },
             quantity: item.quantity
           }

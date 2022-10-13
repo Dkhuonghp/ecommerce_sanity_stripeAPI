@@ -49,16 +49,17 @@ a {
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 15s linear infinite;
-  width: 180%;
+  /* animation: marquee 15s linear infinite; */
+  /* width: 180%; */
+  width: 100%;
 }
 .track:hover {
   animation-play-state: paused;
 }
-/* @keyframes marquee {
+@keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
-} */
+}
 
  span.text-red {
     -webkit-text-stroke: 1px #f02d34;
@@ -100,18 +101,20 @@ a {
   justify-content: center;
   gap: 15px;
   margin-top: 20px;
+  margin-bottom: 5%;
   width: 100%;
 }
 .product-card{
  cursor: pointer;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
- color: #324d67;
+  color: #324d67;
+  text-align: center;
 
 }
-.product-card:hover{
+/* .product-card:hover{
   transform: scale(1.1,1.1)
-}
+} */
 .product-image{
   border-radius: 15px;
  background-color: #ebebeb;
@@ -130,7 +133,7 @@ a {
 
 .hero-banner-container{
   padding: 100px 40px;
-  background-color: #dcdcdc;
+  /* background-color: #dcdcdc; */
   border-radius: 15px;
   position: relative;
   height: 500px;
@@ -157,6 +160,7 @@ a {
 .hero-banner-container h3{
   font-size: 4rem;
   margin-top: 4px;
+  margin-bottom: 2%;
 }
 .hero-banner-container h1{
   color: white;
@@ -167,7 +171,7 @@ a {
 .hero-banner-image{
   position: absolute;
   top: 0%;
-  right:20%;
+  right:6%;
   width: 450px;
   height: 450px;
 }

@@ -119,9 +119,6 @@
 
 // export default ProductDetails
 
-
-
-
 import React, {useState} from 'react'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
@@ -151,7 +148,6 @@ const ProductDetails = ({ product, products }) => {
                                 src={urlFor(item)}
                                 className=""
                                 onMouseEnter=""
-                            
                             />
                         ))}
                     </div>  */}
