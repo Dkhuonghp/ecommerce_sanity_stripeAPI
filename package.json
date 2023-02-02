@@ -10,16 +10,23 @@
   },
   "dependencies": {
     "@babel/core": "^7.17.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.6",
     "@sanity/client": "^3.2.0",
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.25.0",
     "canvas-confetti": "^1.5.1",
+    "firebase": "^9.16.0",
     "next": "12.1.0",
     "next-sanity-image": "^3.2.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-horizontal-scrolling": "^0.1.13",
+    "react-horizontal-scrolling-menu": "^3.2.3",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.3.1",
+    "react-router-dom": "^6.7.0",
     "stripe": "^8.209.0"
   },
   "devDependencies": {

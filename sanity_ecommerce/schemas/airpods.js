@@ -2,6 +2,7 @@ export default {
     name: 'airpods',
     title: 'AirPods',
     type: 'document',
+
     fields: [
         {
             name: 'image',

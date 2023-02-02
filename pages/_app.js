@@ -5,6 +5,9 @@ import { Toaster } from "react-hot-toast"
 
 
 import '../styles/globals.css'
+import '../sass/style.scss'
+
+import '.././firebase/config'
 
 function MyApp({ Component, pageProps }) {
   return (
