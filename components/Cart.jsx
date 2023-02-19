@@ -27,7 +27,7 @@ const Cart = () => {
     
     const data = await response.json();
 
-    toast.loading('読み込み中...');
+    toast.loading('Redirecting...');
 
     stripe.redirectToCheckout({ sessionId: data.id });
   }
@@ -40,21 +40,21 @@ const Cart = () => {
         className="cart-heading"
         onClick={() => setShowCart(false)}>
           <AiOutlineLeft />
-          <span className="heading">カート</span>
+          <span className="heading">Your Cart</span>
+          <span className="cart-num-items">({totalQuantities} items)</span>
         </button>
 
         {cartItems.length < 1 && (
           <div className="empty-cart">
             <AiOutlineShopping size={150} />
-            <h3>カートに商品はありません。</h3>
-            <span className="cart-num-items">({totalQuantities} 点)</span>
+            <h3>Your shopping bag is empty</h3>
             <Link href="/">
               <button
                 type="button"
                 onClick={() => setShowCart(false)}
                 className="btn"
               >
-                買い物を続ける
+                Continue Shopping
               </button>
             </Link>
           </div>
@@ -62,54 +62,44 @@ const Cart = () => {
 
         <div className="product-container">
           {cartItems.length >= 1 && cartItems.map((item) => (
-            <>
-              <p>
-                カートに入っている商品：
-                <span className="cart-num-items">({totalQuantities} 点)</span>
-              </p>
-              <div className="product" key={item._id}>
-                <img src={urlFor(item?.image[0])} className="cart-product-image" />
-                <div className="item-desc">
-                  <div className="flex top">
-                    <h5>{item.name}</h5>
-                    <h4>¥{item.price}</h4>
-
+            <div className="product" key={item._id}>
+              <img src={urlFor(item?.image[0])} className="cart-product-image" />
+              <div className="item-desc">
+                <div className="flex top">
+                  <h5>{item.name}</h5>
+                  <h4>${item.price}</h4>
+                </div>
+                <div className="flex bottom">
+                  <div>
+                  <p className="quantity-desc">
+                    <span className="minus" onClick={() => toggleCartItemQuanitity(item._id, 'dec') }>
+                    <AiOutlineMinus />
+                    </span>
+                    <span className="num" onClick="">{item.quantity}</span>
+                    <span className="plus" onClick={() => toggleCartItemQuanitity(item._id, 'inc') }><AiOutlinePlus /></span>
+                  </p>
                   </div>
-                  <div className="flex bottom">
-                    <div>
-                    <p className="quantity-desc">
-                      <span className="minus" onClick={() => toggleCartItemQuanitity(item._id, 'dec') }>
-                      <AiOutlineMinus />
-                      </span>
-                      <span className="num" onClick="">{item.quantity}</span>
-                      <span className="plus" onClick={() => toggleCartItemQuanitity(item._id, 'inc') }>
-                        <AiOutlinePlus />
-                      </span>
-                    </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="remove-item"
-                      onClick={() => onRemove(item)}
-                    >
-                      <TiDeleteOutline />
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    className="remove-item"
+                    onClick={() => onRemove(item)}
+                  >
+                    <TiDeleteOutline />
+                  </button>
                 </div>
               </div>
-            </>
-
+            </div>
           ))}
         </div>
         {cartItems.length >= 1 && (
           <div className="cart-bottom">
             <div className="total">
-              <h3>商品合計:</h3>
-              <h3>¥{totalPrice}</h3>
+              <h3>Subtotal:</h3>
+              <h3>${totalPrice}</h3>
             </div>
             <div className="btn-container">
               <button type="button" className="btn" onClick={handleCheckout}>
-                レジへ進む
+                Pay with Stripe
               </button>
             </div>
           </div>
