@@ -14,7 +14,7 @@ const HeroBanner = ({ heroBanner, product,  products}) => {
   
   return (
     <div className='hero-banner-container'>
-      {/* <div>
+      <div>
         <h1>{heroBanner.largeText1}</h1>
         <h3>{heroBanner.midText}</h3>
         <p className='beats-solo'>{heroBanner.smallText}</p>
@@ -28,7 +28,7 @@ const HeroBanner = ({ heroBanner, product,  products}) => {
             <h5>Description</h5>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }
